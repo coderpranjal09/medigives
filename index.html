@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Sell Your Near-Expiry Medicine Stocks - Act Now!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>"Sell Your Near-Expiry Medicine Stocks - Act Now!</h1>
+        <button class="donate-btn" onclick="showForm()">Sell Now</button>
+        <form id="donationForm" style="display:none;">
+            <div id="personalDetails">
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="text" id="mobile" placeholder="Mobile No" required>
+                <input type="text" id="address" placeholder="Address" required>
+                <input type="text" id="pincode" placeholder="Pincode" required>
+                <button type="button" onclick="showMedicineDetails()">Next</button>
+            </div>
+            <div id="medicineDetails" style="display:none;">
+                <select id="medicineName" required>
+                    <option value="">Enter Medicine Name</option>
+                </select>
+               exp date <input type="date" id="expiryDate" placeholder="Expiry Date" required>
+               production date <input type="date" id="purchaseDate" placeholder="Select Purchase Date" required>
+                <input type="text" id="price" placeholder="Purchase Price" required>
+                product image<input type="file" id="medicineImage" required>
+                bill image<input type="file" id="billImage" required>
+                <button type="button" onclick="submitForm()">Submit</button>
+            </div>
+        </form>
+        <div id="thankYouMessage" style="display:none;">
+            <h2 >Thank You for Your Donation!</h2>
+            <button onclick="goHome()" id="btn">Go Home</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

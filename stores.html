@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicals Stores Near You</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #fa9108ad;
+            color: white;
+            padding: 1em 2em;
+            text-align: center;
+            font-size: 1.6em;
+        }
+
+        section {
+            padding: 2em;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            text-align: center;
+            color: #333;
+        }
+
+        .store {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 2em;
+        }
+
+        .store-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 1em;
+            width: 250px;
+            text-align: center;
+            padding: 1em;
+            transition: transform 0.3s;
+        }
+
+        .store-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .store-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .store-card h3 {
+            color: #333;
+            margin: 0.5em 0;
+        }
+
+        .store-card p {
+            color: #777;
+            font-size: 0.9em;
+        }
+
+        .store-card button {
+            background-color: #ff6f61;
+            color: white;
+            padding: 0.8em 1.5em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 1em;
+            transition: background-color 0.3s;
+        }
+
+        .store-card button:hover {
+            background-color: #e9432f;
+        }
+
+        footer {
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            margin-top: 3em;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .store {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .store-card {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Medicals Stores Near You</h1>
+        <p>Find the nearest medical stores in Tehri, Uttarakhand offering the medicines you need.</p>
+    </header>
+
+    <section>
+        <h1>Available Stores and Medicines</h1>
+        <div class="store">
+            <!-- Store 1 -->
+            <div class="store-card">
+                <img src="./images/alotmedicine.jpg" alt="Medicine Image">
+                <h3>Shree Hari Medical Store</h3>
+                <p>Near Rishikesh, Tehri Garhwal, Uttarakhand - 249201</p>
+                <button onclick="window.location.href='./pg.html'">Order Now</button>
+            </div>
+
+            <!-- Store 2 -->
+            <div class="store-card">
+                <img src="./images/amoxy.jpg" alt="Medicine Image">
+                <h3>Om Sai Medicals</h3>
+                <p>Tehri, Uttarakhand - 249123</p>
+                <button onclick="window.location.href='./pg.html'">Order Now</button>
+            </div>
+
+            <!-- Store 3 -->
+            <div class="store-card">
+                <img src="./images/another.jpg" alt="Medicine Image">
+                <h3>Shiv Shakti Pharmacy</h3>
+                <p>Ghansali, Tehri Garhwal, Uttarakhand - 249199</p>
+                <button onclick="window.location.href='./pg.html'">Order Now</button>
+            </div>
+
+            <!-- Store 4 -->
+            <div class="store-card">
+                <img src="./images/azithromycin.jpeg" alt="Medicine Image">
+                <h3>Kailash Medical Store</h3>
+                <p>Pipalkoti, Tehri Garhwal, Uttarakhand - 249122</p>
+                <button onclick="window.location.href='./pg.html'">Order Now</button>
+            </div>
+
+            <!-- Store 5 -->
+            <div class="store-card">
+                <img src="./images/cahtgptimage.jpg" alt="Medicine Image">
+                <h3>Rajendra Medicals</h3>
+                <p>Devprayag, Tehri Garhwal, Uttarakhand - 249153</p>
+                <button onclick="window.location.href='./pg.html'">Order Now</button>
+            </div>
+
+            <!-- Store 6 -->
+            <div class="store-card">
+                <img src="./images/cefi.jpg" alt="Medicine Image">
+                <h3>Himalaya Pharmacy</h3>
+                <p>New Tehri, Uttarakhand - 249101</p>
+                <button onclick="window.location.href='./pg.html'">Order Now</button>
+            </div>
+
+            <!-- Store 7 -->
+            <div class="store-card">
+                <img src="./images/disprine.jpg" alt="Medicine Image">
+                <h3>Ganga Medicals</h3>
+                <p>Chamba, Tehri Garhwal, Uttarakhand - 249128</p>
+                <button onclick="window.location.href='./pg.html'">Order Now</button>
+            </div>
+
+            <!-- Store 8 -->
+            <div class="store-card">
+                <img src="./images/dolo-650-paracetamol-tablets-ip.jpg" alt="Medicine Image">
+                <h3>Sunshine Pharmacy</h3>
+                <p>Vikas Nagar, Tehri Garhwal, Uttarakhand - 249207</p>
+                <button onclick="window.location.href='./pg.html'">Order Now</button>
+            </div>
+
+            <!-- Store 9 -->
+            <div class="store-card">
+                <img src="./images/domp.jpg" alt="Medicine Image">
+                <h3>Sai Baba Medicals</h3>
+                <p>Tehri, Uttarakhand - 249100</p>
+                <button onclick="window.location.href='./pg.html'">Order Now</button>
+            </div>
+
+            <!-- Store 10 -->
+            <div class="store-card">
+                <img src="./images/domp.jpg" alt="Medicine Image">
+                <h3>Shree Krishna Pharmacy</h3>
+                <p>Ranipur, Tehri Garhwal, Uttarakhand - 249160</p>
+                <button onclick="window.location.href='./pg.html'">Order Now</button>
+            </div>
+
+            <!-- Store 11 -->
+            <div class="store-card">
+                <img src="./images/hydro.jpg" alt="Medicine Image">
+                <h3>Gauri Medical Store</h3>
+                <p>Baruch, Tehri Garhwal, Uttarakhand - 249172</p>
+                <button onclick="window.location.href='./pg.html'">Order Now</button>
+            </div>
+
+            <!-- Store 12 -->
+            <div class="store-card">
+                <img src="./images/images.jpeg" alt="Medicine Image">
+                <h3>Vijay Medicals</h3>
+                <p>Tehri, Uttarakhand - 249111</p>
+                <button onclick="window.location.href='./pg.html'">Order Now</button>
+            </div>
+
+            <!-- Store 13 -->
+            <div class="store-card">
+                <img src="./images/hydro.jpg" alt="Medicine Image">
+                <h3>Shiv Shakti Medicals</h3>
+                <p>Chamba, Tehri Garhwal, Uttarakhand - 249208</p>
+                <button onclick="window.location.href='./pg.html'">Order Now</button>
+            </div>
+
+            <!-- Store 14 -->
+            <div class="store-card">
+                <img src="./images/lemocit.jpg" alt="Medicine Image">
+                <h3>Shree Ganesh Pharmacy</h3>
+                <p>Ghansali, Tehri Garhwal, Uttarakhand - 249120</p>
+                <button onclick="window.location.href='./pg.html'">Order Now</button>
+            </div>
+
+            <!-- Store 15 -->
+            <div class="store-card">
+                <img src="./images/mediccine.jpg" alt="Medicine Image">
+                <h3>Life Care Medical</h3>
+                <p>Devprayag, Tehri Garhwal, Uttarakhand - 249129</p>
+                <button onclick="window.location.href='./pg.html'">Order Now</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Medicals Stores Near You. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Medicine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+        
+        h1 {
+            margin-bottom: 20px;
+        }
+        
+        .order-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .order-btn:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+        
+        form input, form button {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        form button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        form button:hover {
+            background-color: #0069d9;
+            transform: translateY(-2px);
+        }
+        
+        #successMessage {
+            margin-top: 20px;
+        }
+        
+        #successMessage h2 {
+            margin-bottom: 20px;
+        }
+        
+            .dbt{
+                background-color: #f755cf;
+                color: white;
+                border-radius: 3px;
+                width: 90px;
+                height: 30px;
+                line-height: 10px;
+                border: 1px #f755cf solid ;
+                position: relative;
+                right: 30px;
+                text-decoration: no;
+            }
+            .dbt:hover{
+                background-color: #fff;
+                color: black;
+            }
+            #btn{
+                background-color: #60a9f8;
+                color: white;
+                border-radius: 3px;
+                width: 90px;
+                height: 30px;
+                line-height: 10px;
+                border: 1px #007bff solid ;
+            }
+            #btn:hover{
+                background-color: #fff;
+                color: black;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Medicine Donor NGO</h1>
+        <button class="order-btn" onclick="showForm()">Order Now</button>
+        
+        <form id="orderForm" style="display:none;">
+            <div id="personalDetails">
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="text" id="mobile" placeholder="Mobile No" required>
+                <input type="text" id="address" placeholder="Address" required>
+                <input type="text" id="pincode" placeholder="Pincode" required>
+                <input type="number" id="doses" placeholder="Number of Doses" required>
+                <button type="button" onclick="showOrderDetails()">Next</button>
+            </div>
+            <div id="orderDetails" style="display:none;">
+                <button type="button" onclick="completeOrder()">Complete Your Order</button>
+            </div>
+        </form>
+        
+        <div id="successMessage" style="display:none;">
+            <h2>Order Placed Successfully!</h2>
+            <p>Your reference ID: <span id="referenceID"></span></p>
+            <a id="emailLink" href="#" class="dbt"> Done </a>
+            <button onclick="goHome()" id="btn">Go Home</button>
+        </div>
+    </div>
+    <script >
+        function showForm() {
+            document.querySelector('.order-btn').style.display = 'none';
+            document.getElementById('orderForm').style.display = 'block';
+        }
+        
+        function showOrderDetails() {
+            document.getElementById('personalDetails').style.display = 'none';
+            document.getElementById('orderDetails').style.display = 'block';
+        }
+        
+        function completeOrder() {
+            const name = document.getElementById('name').value;
+            const mobile = document.getElementById('mobile').value;
+            const address = document.getElementById('address').value;
+            const pincode = document.getElementById('pincode').value;
+            const doses = document.getElementById('doses').value;
+        
+            const referenceID = generateReferenceID();
+        
+            const emailBody = `Name: ${name}\nMobile: ${mobile}\nAddress: ${address}\nPincode: ${pincode}\nNumber of Doses: ${doses}\nReference ID: ${referenceID}`;
+            const emailLink = document.getElementById('emailLink');
+            emailLink.href = `mailto:pranjalmaithani81822@gmail.com?subject=Request for Medicine&body=${encodeURIComponent(emailBody)}`;
+        
+            document.getElementById('orderForm').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('referenceID').innerText = referenceID;
+        }
+        
+        function generateReferenceID() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+            const numbers = '0123456789';
+            let result = '';
+            for (let i = 0; i < 6; i++) {
+                result += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            for (let i = 0; i < 4; i++) {
+                result += numbers.charAt(Math.floor(Math.random() * numbers.length));
+            }
+            return result;
+        }
+        
+        function goHome() {
+            window.location.href = './index.html'; // Replace with your home page URL
+        }
+        
+    </script>
+</body>
+</html>
